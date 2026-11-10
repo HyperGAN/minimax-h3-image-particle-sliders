@@ -1,0 +1,22 @@
+{
+  "schema": "minimax-h3-image-cpu-validation-v1",
+  "date": "2026-11-10",
+  "python": "3.12.14",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "particlegan": "0.9.5",
+    "particle-sliders-core": "0.14.2",
+    "pytest": "9.2.0",
+    "setuptools": "84.2.1"
+  },
+  "shared_core_revision": "61878caddeb626fbe77def072051276b7b1f92a1",
+  "tests_passed": 50,
+  "tests_failed": 0,
+  "pip_check": "passed",
+  "build": "sdist and wheel passed",
+  "qualification": "unrelated synthetic CPU software checks only",
+  "native_qualified": false,
+  "model_weights_downloaded": false,
+  "optimizer_steps": 0,
+  "hosted_ci": "not configured"
+}

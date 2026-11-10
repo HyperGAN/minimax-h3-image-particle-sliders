@@ -1,0 +1,87 @@
+{
+  "schema": "minimax-h3-image-source-plan-v1",
+  "inspected_at": "2026-11-10",
+  "model": {
+    "id": "Comfy-Org/MiniMax-H3-Image",
+    "revision": "892de7cb61df49753bf15145a711154803a355cb",
+    "official_id": "MiniMaxAI/MiniMax-H3-Image",
+    "official_revision": "492fd8c4eca666f1085f57e30738c1e0d86b3439",
+    "weights_downloaded": false
+  },
+  "shared_core": {
+    "repository": "https://github.com/HyperGAN/particle-sliders",
+    "revision": "61878caddeb626fbe77def072051276b7b1f92a1",
+    "subdirectory": "packages/particle-sliders-core",
+    "version": "0.14.2",
+    "particlegan": "0.9.5"
+  },
+  "inspected_runtime": {
+    "repository": "https://github.com/Comfy-Org/ComfyUI",
+    "revision": "dba377b97b17c7944ce0cf3d2429ee2caa5c4569",
+    "qualified": false,
+    "installed_by_product": false
+  },
+  "sampling": {
+    "num_inference_steps": 6,
+    "sigmas": [
+      1.0,
+      0.9675236940383911,
+      0.8875485062599182,
+      0.75,
+      0.5327739119529724,
+      0.23200887441635132,
+      0.0
+    ]
+  },
+  "sources": {
+    "README.md": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/README.md",
+      "sha256": "eba19a0c6f71a5b1871277fa0bc6689c0a58086956b34fb3f940765edde66469"
+    },
+    "LICENSE": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/LICENSE",
+      "sha256": "edfab8ece9d0ccd39106c4fe44105ce599b27ca7dd22601b736a8e9219cb4d26"
+    },
+    "pdd_config.json": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/pdd_config.json",
+      "sha256": "cbc0cf1fbb7a7f9525987db453c1bf8218b95ebc686c9c5b74cbb5bbc4852e0b"
+    },
+    "transformer/config.json": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/transformer/config.json",
+      "sha256": "67ceb1d7752942ee984405c26c1187ff58c073b698839ea0ca289e34b8dc61a9"
+    },
+    "vae/config.json": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/vae/config.json",
+      "sha256": "7fcc21bec549804ff0a04d8246e7f90e679d4f8d4b0a27a252bbd18c30e3e4bb"
+    },
+    "model_index.json": {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/raw/492fd8c4eca666f1085f57e30738c1e0d86b3439/model_index.json",
+      "sha256": "b3d478fb7d5fcb432d377cae77fd125b876eb4cbc9834c86e6fb8f5d2613af68"
+    },
+    "ComfyUI/comfy/ldm/minimax/model.py": {
+      "url": "https://github.com/Comfy-Org/ComfyUI/blob/dba377b97b17c7944ce0cf3d2429ee2caa5c4569/comfy/ldm/minimax/model.py",
+      "sha256": "68900fb081fa87bec62a7eb26631f9e154db2e2ac55073c4944dd289cf1317f8"
+    },
+    "ComfyUI/comfy/ldm/minimax/sampling.py": {
+      "url": "https://github.com/Comfy-Org/ComfyUI/blob/dba377b97b17c7944ce0cf3d2429ee2caa5c4569/comfy/ldm/minimax/sampling.py",
+      "sha256": "230c1de65e8ad649172123953472e19844f81e062339bf0d800809d4207e7096"
+    },
+    "ComfyUI/comfy_extras/nodes_minimax_h3.py": {
+      "url": "https://github.com/Comfy-Org/ComfyUI/blob/dba377b97b17c7944ce0cf3d2429ee2caa5c4569/comfy_extras/nodes_minimax_h3.py",
+      "sha256": "217f3b50ede649831c34be347196926211606904610bcb267c8725c18eb62498"
+    },
+    "ComfyUI/comfy/supported_models.py": {
+      "url": "https://github.com/Comfy-Org/ComfyUI/blob/dba377b97b17c7944ce0cf3d2429ee2caa5c4569/comfy/supported_models.py",
+      "sha256": "4fdcdc20c50c26c280a4aefad9611c712ab441e577d05864ae67215b45a744d0"
+    }
+  },
+  "runtime_policy": {
+    "download": false,
+    "load_weights": false,
+    "train": false,
+    "render": false,
+    "publish_models": false
+  },
+  "weight_policy": "raw-only; no EMA or checkpoint averaging",
+  "native_status": "unimplemented; separate model authorization and native qualification required"
+}
