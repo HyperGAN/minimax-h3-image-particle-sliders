@@ -1,0 +1,5 @@
+This repository contains original source integration scaffolding, not MiniMax
+weights, copied native model implementations, or model outputs. Its MIT license
+does not grant rights to MiniMax-H3-Image or other third-party model materials.
+Particle Sliders is a separately installed MIT-licensed shared dependency.
+MiniMax-H3-Image has its own community license; see docs/LICENSE-REVIEW.md.
