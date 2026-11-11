@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minimax-h3-image-particle-sliders"
+version = "0.1.0"
+description = "Source-only MiniMax-H3-Image integration plan for Particle Sliders"
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = [
+  "particle-sliders-core @ git+https://github.com/HyperGAN/particle-sliders.git@61878caddeb626fbe77def072051276b7b1f92a1#subdirectory=packages/particle-sliders-core",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1"]
+
+[project.scripts]
+h3-image-slider = "minimax_h3_image_sliders.cli:main"
+
+[project.entry-points."particle_sliders.image_backends"]
+minimax-h3-image = "minimax_h3_image_sliders.lifecycle:BACKEND"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+minimax_h3_image_sliders = ["source-lock.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
