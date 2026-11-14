@@ -1,5 +1,11 @@
 # MiniMax-H3-Image Particle Sliders
 
+**Memory (calculated):** public planner: **0 GPU /1 GiB RAM**. Separate official native FP4 profile: training **32 GiB VRAM /32 GiB RAM** at2048² batch2/text≤256 (**40 GiB VRAM** at text4096); sampling **24 GiB VRAM /24 GiB RAM**; conditioning separately **32 GiB VRAM /64 GiB RAM**. See [MEMORY.md](MEMORY.md) for the complete budgets and assumptions.
+
+
+
+
+
 Source-only integration scaffold for [Comfy-Org/MiniMax-H3-Image](https://huggingface.co/Comfy-Org/MiniMax-H3-Image), using the shared [Particle Sliders](https://github.com/HyperGAN/particle-sliders) library. This is the official **November 10, 2026 image release**, not Pruna P-H3-Image and not H3 video/audio.
 
 **Not a trained slider or runnable native renderer.** This first version provides an offline request planner, packaged source provenance, an installed shared-lifecycle registration, and synthetic CPU software checks. Native downloading, loading, training, evaluation, export and rendering are unavailable. No model weights, native model implementation, generated images, or trained adapters are included.
