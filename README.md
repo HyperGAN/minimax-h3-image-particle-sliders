@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 python -m pytest -q
 ```
 
-The project pins `particle-sliders-core` **0.14.2** at full commit `9134152cfc65aba14ff734ea803f83f3dca3818b`; that source requires official `particlegan==0.10.1`. No second GAN implementation is vendored. ComfyUI is inspected at an exact source pin but is neither installed nor imported by this package. This is an explicitly new source cohort; old checkpoints and P-H3 results are not rebound to it.
+The project pins `particle-sliders-core` **0.15.1** at full commit `c13890f8e2a1ecf1dc8eb9f2a37f9187cb9fea78`; that source requires official `particlegan==0.11.0`. No second GAN implementation is vendored. ComfyUI is inspected at an exact source pin but is neither installed nor imported by this package. This is an explicitly new source cohort; old checkpoints and P-H3 results are not rebound to it.
 
 The planner also works without Torch or native dependencies:
 
