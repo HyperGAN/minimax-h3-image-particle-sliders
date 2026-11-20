@@ -10,10 +10,10 @@
   },
   "shared_core": {
     "repository": "https://github.com/HyperGAN/particle-sliders",
-    "revision": "9134152cfc65aba14ff734ea803f83f3dca3818b",
+    "revision": "c13890f8e2a1ecf1dc8eb9f2a37f9187cb9fea78",
     "subdirectory": "packages/particle-sliders-core",
-    "version": "0.14.2",
-    "particlegan": "0.10.1"
+    "version": "0.15.1",
+    "particlegan": "0.11.0"
   },
   "inspected_runtime": {
     "repository": "https://github.com/Comfy-Org/ComfyUI",
