@@ -51,7 +51,7 @@ def test_lock_is_independent_and_immutable_to_caller():
     lock=source_lock(); lock["sampling"]["sigmas"][0]=0
     assert source_lock()["sampling"]["sigmas"][0] == 1
     assert len(source_lock()["shared_core"]["revision"]) == 40
-    assert source_lock()["shared_core"]["particlegan"] == "0.9.5"
+    assert source_lock()["shared_core"]["particlegan"] == "0.10.1"
     assert not any(source_lock()["runtime_policy"].values())
 
 
