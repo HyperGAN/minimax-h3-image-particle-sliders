@@ -66,3 +66,14 @@ The CPU fixture uses the actual shared `TinyParticleProjection` on a random 8×8
 This product owns future native construction, conditioning, packing, PDD/sampler fidelity and model-specific admission. Shared lifecycle and adapter primitives remain in Particle Sliders; GAN mathematics remain in ParticleGAN. Existing `p-h3-image-particle-sliders` and `minimax-h3-particle-sliders` are separate products and were not modified.
 
 Code is MIT. Model rights remain separate. No deployment or weight publication is part of this repository setup. See [archived validation](https://github.com/HyperGAN/minimax-h3-image-particle-sliders/blob/4aa24e62c44518b6eb854efdb1a034252fbac718/VALIDATION.md) for executed versus unrun checks.
+
+## Scheduling on an owned FP4 image pipeline
+
+The native FP4 execution owner can call
+`minimax_h3_image_sliders.scheduled_native.denoise_with_gains` with its
+original PDD denoiser, attached RAW adapter and six gains. Each gain uses
+the original PDD head and its native timestep. The returned image latent
+can be passed to the same native VAE stage. This helper requires the
+separate native FP4 runner and its existing conditioning and resource
+checks. Effective strengths must lie in `[0,1]`. Pretrained scheduled
+image effects are pending.
