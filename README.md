@@ -6,9 +6,14 @@
 
 
 
-Source-only integration scaffold for [Comfy-Org/MiniMax-H3-Image](https://huggingface.co/Comfy-Org/MiniMax-H3-Image), using the shared [Particle Sliders](https://github.com/HyperGAN/particle-sliders) library. This is the official **November 10, 2026 image release**, not Pruna P-H3-Image and not H3 video/audio.
+Offline planner and native FP4 scheduling helper for [Comfy-Org/MiniMax-H3-Image](https://huggingface.co/Comfy-Org/MiniMax-H3-Image), using the shared [Particle Sliders](https://github.com/HyperGAN/particle-sliders) library. This is the official **November 10, 2026 image release**, not Pruna P-H3-Image and not H3 video/audio.
 
-**Not a trained slider or runnable native renderer.** This first version provides an offline request planner, packaged source provenance, an installed shared-lifecycle registration, and synthetic CPU software checks. Native downloading, loading, training, evaluation, export and rendering are unavailable. No model weights, native model implementation, generated images, or trained adapters are included.
+The installed shared lifecycle provides offline planning and provenance.
+The optional scheduling helper runs inside a separately staged native FP4
+pipeline. That pipeline supplies the denoiser, VAE, base weights and attached
+RAW adapter. The package ships the helper and the measured comparison, with
+model and adapter weights supplied by the caller.
+[Native scheduling and measured result](#scheduling-on-an-owned-fp4-image-pipeline).
 
 The [model license](docs/LICENSE-REVIEW.md) restricts territories and commercial/hosted use. Model authorization has not been established by this repository. Source publication does not authorize model use.
 
@@ -63,7 +68,7 @@ The CPU fixture uses the actual shared `TinyParticleProjection` on a random 8×8
 
 ## Ownership and release scope
 
-This product owns future native construction, conditioning, packing, PDD/sampler fidelity and model-specific admission. Shared lifecycle and adapter primitives remain in Particle Sliders; GAN mathematics remain in ParticleGAN. Existing `p-h3-image-particle-sliders` and `minimax-h3-particle-sliders` are separate products and were not modified.
+The separately staged native runner owns model construction, conditioning, packing and admission. The scheduling helper preserves its PDD sampler and adapter ownership. Shared lifecycle and adapter primitives remain in Particle Sliders; GAN mathematics remain in ParticleGAN. Existing `p-h3-image-particle-sliders` and `minimax-h3-particle-sliders` are separate products and were not modified.
 
 Code is MIT. Model rights remain separate. No deployment or weight publication is part of this repository setup. See [archived validation](https://github.com/HyperGAN/minimax-h3-image-particle-sliders/blob/4aa24e62c44518b6eb854efdb1a034252fbac718/VALIDATION.md) for executed versus unrun checks.
 
