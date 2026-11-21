@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 python -m pytest -q
 ```
 
-The project pins `particle-sliders-core` **0.15.1** at full commit `c13890f8e2a1ecf1dc8eb9f2a37f9187cb9fea78`; that source requires official `particlegan==0.11.0`. No second GAN implementation is vendored. ComfyUI is inspected at an exact source pin but is neither installed nor imported by this package. This is an explicitly new source cohort; old checkpoints and P-H3 results are not rebound to it.
+The project pins `particle-sliders-core` **0.15.2** at full commit `ec1161f5d74481be3540cb0dfa63d0e8f8b54e90`; that source requires official `particlegan==0.11.1`. No second GAN implementation is vendored. ComfyUI is inspected at an exact source pin but is neither installed nor imported by this package. This is an explicitly new source cohort; old checkpoints and P-H3 results are not rebound to it.
 
 The planner also works without Torch or native dependencies:
 
@@ -65,4 +65,4 @@ The CPU fixture uses the actual shared `TinyParticleProjection` on a random 8×8
 
 This product owns future native construction, conditioning, packing, PDD/sampler fidelity and model-specific admission. Shared lifecycle and adapter primitives remain in Particle Sliders; GAN mathematics remain in ParticleGAN. Existing `p-h3-image-particle-sliders` and `minimax-h3-particle-sliders` are separate products and were not modified.
 
-Code is MIT. Model rights remain separate. No deployment or weight publication is part of this repository setup. See [validation](VALIDATION.md) for executed versus unrun checks.
+Code is MIT. Model rights remain separate. No deployment or weight publication is part of this repository setup. See [archived validation](https://github.com/HyperGAN/minimax-h3-image-particle-sliders/blob/4aa24e62c44518b6eb854efdb1a034252fbac718/VALIDATION.md) for executed versus unrun checks.
