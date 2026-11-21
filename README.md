@@ -88,3 +88,46 @@ FP32 VAE, the mean finished-image gain was +0.00226 early-heavy,
 +0.00082 constant, and +0.00141 late-heavy at nominal strength 0.5.
 All six images passed independent integrity.
 [Per-case evidence](evidence/bioluminescence-fp4-raw8-scheduled-strength.json)
+
+### Activation-dependent strength
+
+Pass an `ImageGatePlan` as `gate_plan` to the same helper. At each native
+PDD head, it averages the live packed image rows in FP32, yielding a
+96-channel readout before entering that head's RAW adapter scope. CFP and CLABS
+use a fitted unit direction for that readout. The matched random control
+uses its calibrated target rate and a separate gate seed. The shared gate
+chooses between OFF and the caller's positive nominal strength. The receipt
+records each decision, the effective strengths and the sigma-integrated dose.
+[Shared equations and active-budget calibration](https://github.com/HyperGAN/particle-sliders/blob/b1f780decc516808cfd3019d5e5b674457161f86/docs/strength-schedules.md#cfp-and-clabs)
+
+The separately staged FP4 runner can load the reviewed `scheduled_native.py`
+by filename, as in the archived fixed-schedule run. The plan reads and verifies
+the steering module in a wheel built from [core PR #269](https://github.com/HyperGAN/particle-sliders/pull/269).
+The original owner keeps its installed dependencies and checkpoint bindings.
+
+```python
+from runpy import run_path
+
+helper = run_path(verified_scheduling_source)
+gate_plan = helper["ImageGatePlan"](
+    core_wheel=reviewed_core_269_wheel,
+    method="cfp",
+    parameter=calibrated_threshold,
+    direction=fitted_packed_image_direction,
+    calibration_sha256=calibration_record_sha256,
+)
+latent, trace = helper["denoise_with_gains"](
+    denoise, transformer, conditioning, noise,
+    scale_adapter=raw_adapter.scaled, strength=qualified_strength,
+    gate_plan=gate_plan, check=check,
+)
+```
+
+CLABS takes an explicit bias, seed and `clabs` calibration fields. For
+fixed-strength replay, pass the recorded effective strengths divided by the
+same nominal strength as `step_gains`. The existing Bioluminescence cache
+contains paired velocities on the same neutral trajectory. Fitting the
+contrastive packed-latent direction requires separate matched attribute and
+neutral trajectories, followed by budget calibration with steering active
+on disjoint cases. Adaptive finished-image gain on the saved FP4 RAW8 adapter
+is unmeasured.
