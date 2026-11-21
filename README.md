@@ -75,5 +75,11 @@ original PDD denoiser, attached RAW adapter and six gains. Each gain uses
 the original PDD head and its native timestep. The returned image latent
 can be passed to the same native VAE stage. This helper requires the
 separate native FP4 runner and its existing conditioning and resource
-checks. Effective strengths must lie in `[0,1]`. Pretrained scheduled
-image effects are pending.
+checks. Effective strengths must lie in `[0,1]`.
+
+Early-heavy strength improved both matched cases of the Bioluminescence
+G-half RAW8 profile. On the original 2048-pixel FP4 PDD6 route with its
+FP32 VAE, the mean finished-image gain was +0.00226 early-heavy,
++0.00082 constant, and +0.00141 late-heavy at nominal strength 0.5.
+All six images passed independent integrity.
+[Per-case evidence](evidence/bioluminescence-fp4-raw8-scheduled-strength.json)

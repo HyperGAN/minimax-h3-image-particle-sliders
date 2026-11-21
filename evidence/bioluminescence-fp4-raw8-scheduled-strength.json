@@ -1,0 +1,147 @@
+{
+  "profile": "Bioluminescence G-half RAW8 original FP4 native image",
+  "raw_sha256": "20c7988b344881eccd2aafe6f285c448173c1376f17907ab0b5fe4dba9a5dac4",
+  "resolution": [
+    2048,
+    2048
+  ],
+  "native_PDD_steps": 6,
+  "original_VAE": "FP32",
+  "matched_cases": 2,
+  "actual_sigmas": [
+    1.0,
+    0.9675236940383911,
+    0.8875485062599182,
+    0.75,
+    0.5327739119529724,
+    0.23200887441635132,
+    0.0
+  ],
+  "nominal_strength": 0.5,
+  "measure": "Mean matched finished-image Bioluminescence ON minus OFF",
+  "best_qualified_mean": "early",
+  "arms": {
+    "constant": {
+      "mean_effect_gain": 0.0008164482812086744,
+      "change_vs_constant": 0.0,
+      "effective_strengths": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "step_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "integrity_passes": 2,
+      "qualified": true,
+      "cases": [
+        {
+          "case": "bioluminescence-showcase-01-moon-moth",
+          "seed": 9101,
+          "effect_gain": 0.0002762041985988617,
+          "integrity": "pass",
+          "on_sha256": "c122e7c858ffb3280dd9bf08fb6b4b5929262bfb3878a9c687cb0029c415fdac",
+          "off_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b"
+        },
+        {
+          "case": "bioluminescence-showcase-02-forest-elephant",
+          "seed": 9102,
+          "effect_gain": 0.0013566923638184871,
+          "integrity": "pass",
+          "on_sha256": "2670d00e85aad4fc620b9b3f64e431912176fbf9b0b87a56e3e753813263ab45",
+          "off_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1"
+        }
+      ]
+    },
+    "early": {
+      "mean_effect_gain": 0.002256914973258972,
+      "change_vs_constant": 0.0014404666920502978,
+      "effective_strengths": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.3044842449464923,
+        0.25
+      ],
+      "step_gains": [
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        0.6089684898929846,
+        0.5
+      ],
+      "integrity_passes": 2,
+      "qualified": true,
+      "cases": [
+        {
+          "case": "bioluminescence-showcase-01-moon-moth",
+          "seed": 9101,
+          "effect_gain": 0.0024554692208766937,
+          "integrity": "pass",
+          "on_sha256": "574fb25b5f03207560213d947a8976067f7662ba1d9427600bd4834f95f26443",
+          "off_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b"
+        },
+        {
+          "case": "bioluminescence-showcase-02-forest-elephant",
+          "seed": 9102,
+          "effect_gain": 0.0020583607256412506,
+          "integrity": "pass",
+          "on_sha256": "9b745c106a983670d1cbb367c8569085c93b2991b957c3f8a74a23d445bd2dfe",
+          "off_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1"
+        }
+      ]
+    },
+    "late": {
+      "mean_effect_gain": 0.001411281526088715,
+      "change_vs_constant": 0.0005948332448800406,
+      "effective_strengths": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.6955157550535077,
+        0.75
+      ],
+      "step_gains": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.3910315101070154,
+        1.5
+      ],
+      "integrity_passes": 2,
+      "qualified": true,
+      "cases": [
+        {
+          "case": "bioluminescence-showcase-01-moon-moth",
+          "seed": 9101,
+          "effect_gain": 0.001589628557364146,
+          "integrity": "pass",
+          "on_sha256": "dde3a89d5c2707e5742345696d229581ddc79212c774493a4fdc2ad9e91a1e7d",
+          "off_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b"
+        },
+        {
+          "case": "bioluminescence-showcase-02-forest-elephant",
+          "seed": 9102,
+          "effect_gain": 0.0012329344948132839,
+          "integrity": "pass",
+          "on_sha256": "63d09270060fa2588b95a5b49a5b53bade22c1af8aaad3617f869690ac6247ac",
+          "off_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1"
+        }
+      ]
+    }
+  },
+  "new_optimizer_updates": 0,
+  "ema_decay": null
+}
