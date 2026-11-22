@@ -1,0 +1,440 @@
+{
+  "profile": "Bioluminescence G-half RAW64 original FP4 native image",
+  "raw_sha256": "dc9c922e17a21eaac92c0124b7647ad80014776c5e3416013bf209f326a3143e",
+  "full_sha256": "dcd7329e9c37d7f47a31760be7e575b6fcc76235f48510e0a3af35b55f21a9a4",
+  "native_model": {
+    "base_math_device": "cuda",
+    "base_weight_EMA": null,
+    "diffusers_revision": "43e30028af5120d8b0868cb6975b9fad39cc4fab",
+    "fixed_Pika_adapter": false,
+    "model_config": "f8a1f3f87e708d0d4268d7c1abd040a7af9f2b7c435827f14e0a2d6fc260bcf9",
+    "native_sources": {
+      "native_adapter.py": "c137ad62703fb780b09c381d185cf8cfdac80400317d0d251be0397072aeb9b4",
+      "native_pipeline.py": "19abb6b15d744443d6dff7a083e4f3d8e042db11b04808588e2e900e2034a1fa",
+      "native_runtime.py": "ec716210158c093b8e0db00c988c16012556faf3f89070636246a18a2d54625f"
+    },
+    "pdd_config": "cbc0cf1fbb7a7f9525987db453c1bf8218b95ebc686c9c5b74cbb5bbc4852e0b",
+    "precision_profile": "MiniMax-H3-Image-original50-refiner2-bnb0502-FP4-BF16-routed128x4-r8-v1",
+    "repository": "MiniMaxAI/MiniMax-H3-Image",
+    "revision": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
+    "scheduler_config": "ce1792ea34cef021fec782abf9f45125f6bf0438f7c424e567ce28b246ad0a08",
+    "weight_index": "9617854370f06cbc5d35f01c9ec540c32479464c17de0756c2aac537926d94f9"
+  },
+  "release_commit": "f52682da712379cae1108691d9a583c2913c0e98",
+  "resolution": [
+    2048,
+    2048
+  ],
+  "native_PDD_steps": 6,
+  "original_VAE": "FP32",
+  "matched_cases": 2,
+  "actual_sigmas": [
+    1.0,
+    0.9675236940383911,
+    0.8875485062599182,
+    0.75,
+    0.5327739119529724,
+    0.23200887441635132,
+    0.0
+  ],
+  "nominal_strength": 1.0,
+  "measure": "Mean matched finished-image Bioluminescence ON minus OFF (SIGLIP margins)",
+  "comparison": "Each gated arm uses a separate constant at exactly the same sigma-integrated adapter dose for the same prompt, seed and archived OFF.",
+  "scope": "Two original moth and elephant showcase cases, excluded from probe fit and gate calibration.",
+  "replay": {
+    "core_revision": "b1f780decc516808cfd3019d5e5b674457161f86",
+    "core_wheel_sha256": "dc68232a73cc606143980768f91ffd640f1c8e1cff089b9f6a65ee82b3b90a8d",
+    "scheduling_source_sha256": "581b5e6da8de7931328f756cd255dd9acfbba978a420fd4acaac46ae6b9b8454",
+    "calibration_sha256": "64875380bd1effac1ce0f69d06725bb43370aa3f1015031090a437adea612067",
+    "native_calibration_capture_sha256": "7de6e261cbd5242b1b4bf9c694e3fe1596aae824639afced42435ef6dce72ff5",
+    "direction": [
+      0.31310033798217773,
+      -0.042869046330451965,
+      0.32632777094841003,
+      -0.03929987922310829,
+      -0.1432860642671585,
+      -0.1293802261352539,
+      -0.14765609800815582,
+      -0.1352609395980835,
+      -0.11004701256752014,
+      -0.1258077472448349,
+      -0.1222846731543541,
+      -0.1356576830148697,
+      -0.020878642797470093,
+      -0.05133616179227829,
+      -0.05031615123152733,
+      -0.032350093126297,
+      0.11905346810817719,
+      0.1097385361790657,
+      0.12586615979671478,
+      0.1253705471754074,
+      -0.10535764694213867,
+      -0.10220938175916672,
+      -0.113987497985363,
+      -0.09325075149536133,
+      0.012487840838730335,
+      0.002046481240540743,
+      -0.001767983310855925,
+      0.010668064467608929,
+      0.002551581710577011,
+      0.012500734068453312,
+      0.01394698116928339,
+      0.011469104327261448,
+      -0.053894754499197006,
+      -0.03903913125395775,
+      -0.040420565754175186,
+      -0.03417198732495308,
+      -0.09327373653650284,
+      -0.0946606993675232,
+      -0.0781070664525032,
+      -0.10931676626205444,
+      -0.05103464424610138,
+      -0.04648013412952423,
+      -0.045157305896282196,
+      -0.04209378361701965,
+      -0.03447648137807846,
+      -0.03304034844040871,
+      -0.01846144162118435,
+      -0.01934281550347805,
+      -0.060674503445625305,
+      -0.07278439402580261,
+      -0.049319420009851456,
+      -0.05708252638578415,
+      0.11882079392671585,
+      0.11507408320903778,
+      0.1260964572429657,
+      0.14677643775939941,
+      0.10558018833398819,
+      0.12051068991422653,
+      0.1016213670372963,
+      0.10357403010129929,
+      0.17596736550331116,
+      0.13413573801517487,
+      0.1515594869852066,
+      0.14744356274604797,
+      0.024063408374786377,
+      0.05434548854827881,
+      0.0173442754894495,
+      0.026904406026005745,
+      0.03433863818645477,
+      0.04596728831529617,
+      0.02374429628252983,
+      0.043839357793331146,
+      0.03526850789785385,
+      0.03067576140165329,
+      0.02128518931567669,
+      0.0342600978910923,
+      0.05286281555891037,
+      0.03671427071094513,
+      0.04265591874718666,
+      0.04908689484000206,
+      -0.13569699227809906,
+      -0.13691626489162445,
+      -0.12108875811100006,
+      -0.1567455530166626,
+      0.06126495078206062,
+      0.057643089443445206,
+      0.05589300021529198,
+      0.05276096239686012,
+      -0.19159884750843048,
+      -0.17568351328372955,
+      -0.19452250003814697,
+      -0.19339515268802643,
+      0.06749945133924484,
+      0.06102433428168297,
+      0.06049792841076851,
+      0.06307799369096756
+    ],
+    "direction_dtype": "float32",
+    "target_firing_fraction": 0.5,
+    "allowed_count_error": 1,
+    "cfp": {
+      "fired": 12,
+      "eligible": 24,
+      "native_calibration_trial_sha256": "8de87680af118f850c746f23a8832a17d8d7cdefc5dcdbd2bf1fc6839ba32088",
+      "native_calibration_trace_sha256s": [
+        "0fb8c7a69164435778846c02727e2746e175695c917373cd4cfb72b033c33719",
+        "664770ed945e10645f8d2f96d637d62d2a9db852c7db6ba727b91de9d78f26b9",
+        "d8a942ee57893c598b90f151d4d9a4208e9d5aa6ad9b3fbb93ec19db17d39efc",
+        "70df2158c712452bf25be9e2b6e7e4a3e1487d288cbc2e990d752106fad72fe0"
+      ],
+      "threshold": 0.1467100724403281
+    },
+    "clabs": {
+      "fired": 13,
+      "eligible": 24,
+      "native_calibration_trial_sha256": "862a4c7b55d30aa7e66b5d887d32030d248091b4ddb502be5efdac39feaf4c49",
+      "native_calibration_trace_sha256s": [
+        "46b7c3281e0c72ae9e7de8bff26a209973780bd5299675f0bbd69b2c73a9c284",
+        "522fd8446714645e6b0a387e6236b3f13a473d9617c48d72d849a2a504c5e57e",
+        "4d483de6449f2f54dd4f1707d34e5f125535abb97ad5cbd4da8777953602bea2",
+        "023f79e57524305de2cc3a4f708bcb6cc82643ee9d9e4e5dbb469bfa5a5132e8"
+      ],
+      "bias": -0.546956496139148,
+      "parameters": {
+        "mean": 0.36919957628318417,
+        "std": 0.5431080203035683,
+        "epsilon": 1e-06,
+        "setpoint": 0.75,
+        "proportional_gain": 1.0,
+        "integral_gain": 0.2,
+        "beta": 0.2
+      }
+    }
+  },
+  "methods": {
+    "cfp": {
+      "cases": [
+        {
+          "case": "bioluminescence-showcase-01-moon-moth",
+          "seed": 9101,
+          "prompt": "A white moth with open wings rests on an unfurling fern beside a still black pond. Tiny droplets cling to the leaves. Macro wildlife photograph at twilight, clear wing detail.",
+          "equal_integrated_dose": 0.11245149374008179,
+          "constant_strength": 0.11245149374008179,
+          "gate_ON_minus_OFF": 0.0022072183589140577,
+          "constant_ON_minus_OFF": 0.0012672680119673412,
+          "gate_change_vs_constant": 0.0009399503469467165,
+          "gate": {
+            "effective_strengths": [
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "native_latent_sha256": "f96acd00f81d26b61ef2a0a95125ac04207459ab40c69e75c1bab716225271ed",
+            "trace_receipt_sha256": "c4ee921dc2e350f39897f2fd04207fc3082cf9887d64cb0d54ddcbdd22960eab",
+            "image_sha256": "fa813b20a029321c75e4bdb9ad5b35b33111db689b27922d00c0e94246af8d49",
+            "intensity": 0.003845230986674627,
+            "integrity": "pass",
+            "effect_first_sha256": "8b3c89658cf7fc4f5b0526ded9dfb98914bc61c5112c8546c8b101f0e6ac07cd",
+            "integrity_first_sha256": "274b5cf31abc9b9bbf44bcdd0894a72581da06f506f556623be7edcf52f9b17e"
+          },
+          "constant": {
+            "effective_strengths": [
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179
+            ],
+            "native_latent_sha256": "b7c442fc1b4becae0edfdffcd290251aa4a74520a25f8a2f69d3ceaa3637970f",
+            "trace_receipt_sha256": "6e937deab65e7449a443bb4135a13f4c0fbf5854ca35e3e8d79eb6fc51aba038",
+            "image_sha256": "be84586cc21272c47586166df2a2abd21d0690999928ca03c7d6dc03d61f1fcc",
+            "intensity": 0.0029052806397279105,
+            "integrity": "pass",
+            "effect_first_sha256": "76f6ef3616431342d06ee07f4cfa42fd02e47392d8992cac2b826d957e01c23a",
+            "integrity_first_sha256": "4acb85cb1f52eec2c08207795c1e7089eb5cd0cd9faf0bd4eed8cc832d01f0be"
+          },
+          "OFF": {
+            "image_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b",
+            "intensity": 0.0016380126277605693,
+            "integrity": "pass",
+            "effect_first_sha256": "3c828445a87d2ec5b5b056ece49ce75049db836d266e356eaafbd7523d78abe3",
+            "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+          }
+        },
+        {
+          "case": "bioluminescence-showcase-02-forest-elephant",
+          "seed": 9102,
+          "prompt": "An elephant walks through tall ferns beneath a dense tropical canopy at dusk. A shallow stream crosses the foreground. Cinematic wildlife photograph, full-body view.",
+          "equal_integrated_dose": 0.11245149374008179,
+          "constant_strength": 0.11245149374008179,
+          "gate_ON_minus_OFF": 0.002809653679529826,
+          "constant_ON_minus_OFF": 0.0008402603367964421,
+          "gate_change_vs_constant": 0.001969393342733384,
+          "gate": {
+            "effective_strengths": [
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "native_latent_sha256": "36a05bd2acbc14770cc5070c8f3e0e75517dca64970c70334d76d55539cb5360",
+            "trace_receipt_sha256": "b56cff1996747f601287a57c75394df92912e0c6810f11eaefb1d58b833d94da",
+            "image_sha256": "0d2216f6bc4bf5cd02ce208d314e9e2a12847472bba3e2633efb6fec13b63795",
+            "intensity": -0.0074038368960221606,
+            "integrity": "pass",
+            "effect_first_sha256": "fa8a21de1ebcf6cd05f7c50d2b0cac601d4b1d7401eed25b260b88a1e8df9cb6",
+            "integrity_first_sha256": "119c007523f91d987adb195d6e378f69fb92f0878e7c5d3ed298e4ebaffea4be"
+          },
+          "constant": {
+            "effective_strengths": [
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179,
+              0.11245149374008179
+            ],
+            "native_latent_sha256": "3e9f92a0866812954710df90b43cdc875d67c0276a4e5b70edf2021baca296d3",
+            "trace_receipt_sha256": "961215ea15aa04abc6f6de410acef5749e8fed369c9257b2a7c5934641d3c045",
+            "image_sha256": "f76645bfe42e732309ecd5e8b64d6e74982bf3570922f99a1c81409a25247363",
+            "intensity": -0.009373230238755545,
+            "integrity": "pass",
+            "effect_first_sha256": "f5dba8b58742d987fddbfba38bd4c06a3a5782743d8e95453c1c305d21c2f77f",
+            "integrity_first_sha256": "95dfb72776598354aaaf8257ce9c9574570a87a15510634c09f908bbc32f0c89"
+          },
+          "OFF": {
+            "image_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1",
+            "intensity": -0.010213490575551987,
+            "integrity": "pass",
+            "effect_first_sha256": "ed389f82b339969127953caf1ba87d9bddd838ecac16cee042b6eda6e09f9c0c",
+            "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+          }
+        }
+      ],
+      "mean_gate_ON_minus_OFF": 0.002508436019221942,
+      "mean_constant_ON_minus_OFF": 0.0010537641743818917,
+      "mean_gate_change_vs_constant": 0.0014546718448400502,
+      "integrity": "pass",
+      "qualified": true
+    },
+    "clabs": {
+      "cases": [
+        {
+          "case": "bioluminescence-showcase-01-moon-moth",
+          "seed": 9101,
+          "prompt": "A white moth with open wings rests on an unfurling fern beside a still black pond. Tiny droplets cling to the leaves. Macro wildlife photograph at twilight, clear wing detail.",
+          "equal_integrated_dose": 0.0799751877784729,
+          "constant_strength": 0.0799751877784729,
+          "gate_ON_minus_OFF": 0.0013527895013491313,
+          "constant_ON_minus_OFF": 4.68095143636067e-05,
+          "gate_change_vs_constant": 0.0013059799869855246,
+          "gate": {
+            "effective_strengths": [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "native_latent_sha256": "eecb66c9235f85f064574d5ba556e4b493d394c8bdad6b63a32b3bd47c97d920",
+            "trace_receipt_sha256": "c064f506faa905b36173a362013a37529bb865ef0e9757abd964390488acfa3f",
+            "image_sha256": "933b97064682de72b66045dd95f62fe1d5a661bc6d8142d673f9e7ae00113b6d",
+            "intensity": 0.0029908021291097007,
+            "integrity": "pass",
+            "effect_first_sha256": "02500347078ef8dbab50026315d74eca8004a14293ebae6fbe38a9ea24497e47",
+            "integrity_first_sha256": "44ccf6075904ad5818a9b2eea10aeb5fa6729102b785062ba5196b52849f3ac4"
+          },
+          "constant": {
+            "effective_strengths": [
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729
+            ],
+            "native_latent_sha256": "1887a0d12e0e5c1f5ab88213c152958589e00fc0d6856f36c0fce6414faa1e54",
+            "trace_receipt_sha256": "63229250dcdbce389b210e5d7f3f8d3c6413ea4e789f9e78bb8c11b396d56037",
+            "image_sha256": "286907ae0b2800d057f7f01b603e08d8c6873f4599f98000c50e1af2f20eea7e",
+            "intensity": 0.001684822142124176,
+            "integrity": "pass",
+            "effect_first_sha256": "d831029f0238e6d12faf54d9e7e3aaf46bfab256f2f762952f82058ae3332819",
+            "integrity_first_sha256": "855ea3c8c0d15ce18b536c1b1942129937e341320eaf5f7b477a7fd50b13cc18"
+          },
+          "OFF": {
+            "image_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b",
+            "intensity": 0.0016380126277605693,
+            "integrity": "pass",
+            "effect_first_sha256": "3c828445a87d2ec5b5b056ece49ce75049db836d266e356eaafbd7523d78abe3",
+            "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+          }
+        },
+        {
+          "case": "bioluminescence-showcase-02-forest-elephant",
+          "seed": 9102,
+          "prompt": "An elephant walks through tall ferns beneath a dense tropical canopy at dusk. A shallow stream crosses the foreground. Cinematic wildlife photograph, full-body view.",
+          "equal_integrated_dose": 0.0799751877784729,
+          "constant_strength": 0.0799751877784729,
+          "gate_ON_minus_OFF": 0.0010731133321921025,
+          "constant_ON_minus_OFF": 0.0019362270832061768,
+          "gate_change_vs_constant": -0.0008631137510140743,
+          "gate": {
+            "effective_strengths": [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "native_latent_sha256": "fcec63d3b58c9ff3e2a35184f81de39afe51a91f5f9e7195c739b0c950ebaa3f",
+            "trace_receipt_sha256": "7dc936e0a4771a512127bc8f4f53469a2afc97708b5299e25dab225e7f185140",
+            "image_sha256": "ffca990fe5359e446c8e3e4dd44dc57512e821400581659f8fe6bde59837a97d",
+            "intensity": -0.009140377243359884,
+            "integrity": "pass",
+            "effect_first_sha256": "31c93222a45d8f775f878ceedad93c12cf7013fd5f747e13d299f57159a4e47b",
+            "integrity_first_sha256": "8fc683472cbab552b256fe5e8aae81e51b4296b6dc8d128fb403ad64814d9012"
+          },
+          "constant": {
+            "effective_strengths": [
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729,
+              0.0799751877784729
+            ],
+            "native_latent_sha256": "f94cf46a6441c2939d40a031cf79bde195867e82209a4fbe1b1ab23e2bf10149",
+            "trace_receipt_sha256": "d490d16e9193001f18e543a1b2c5cae8f73e7532b04f0e0be1e234df1e17f810",
+            "image_sha256": "03d7a0423b84ebb8f2aa8e2365dfdfa5454e30aaea0d1b15a876ab03798db843",
+            "intensity": -0.00827726349234581,
+            "integrity": "pass",
+            "effect_first_sha256": "e73f816398f4679d56f186976b823a086230b8f932ce0305b63741bc757b91b4",
+            "integrity_first_sha256": "0ac4982e741ae43db4b253f82c3a571f00929d62aa7ddb4bd05749ac9932b25e"
+          },
+          "OFF": {
+            "image_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1",
+            "intensity": -0.010213490575551987,
+            "integrity": "pass",
+            "effect_first_sha256": "ed389f82b339969127953caf1ba87d9bddd838ecac16cee042b6eda6e09f9c0c",
+            "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+          }
+        }
+      ],
+      "mean_gate_ON_minus_OFF": 0.001212951416770617,
+      "mean_constant_ON_minus_OFF": 0.0009915182987848916,
+      "mean_gate_change_vs_constant": 0.00022143311798572519,
+      "integrity": "pass",
+      "qualified": true
+    }
+  },
+  "original_strength_1": {
+    "nominal_strength": 1,
+    "mean_ON_minus_OFF": 0.0018240908781687422,
+    "case_gains": [
+      0.001923505216836929,
+      0.001724676539500555
+    ],
+    "effect_sha256": "d96a6669013df0e1c9c506e7bbcdd9dd2a668bee6b36cf4df83b2e1d2a2fd9df",
+    "integrity_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+  },
+  "independent_integrity": {
+    "qualified_profile": "Qwen3VL8B-NF4-BF16compute-greedy-v1",
+    "unique_passes": 10,
+    "new_passes": 8,
+    "reused_archived_OFF_passes": 2
+  },
+  "new_optimizer_updates": 0,
+  "ema_decay": null,
+  "evidence_sha256": {
+    "heldout": "b8224353632bd67e0dff505d87cfb93366246c8853d78fe5e7bdf7922902e70f",
+    "native": "ed5aaa6048890654437788d31df8c5c1958aca7791cef9c6d86dc1f51636c3d0",
+    "effect_protocol": "73ef463898e07f086559dc30e29825d55f77f46f02bbc807de87237ca342fe60",
+    "integrity_qualification": "18f83d5367f013d2cb7fe84ce2deb579b53f3154635e7b059f19f7e076dc287a",
+    "guards": {
+      "calibration": "f310fca8905659d3a099680cc1805329341e04ce6ec41545b3774bf9d4746c90",
+      "denoise": "f715e26e8615f98785dbe89316bb15bb10cff9c85988665319b1086e2d80b707",
+      "decode": "18337b3c9a8565824fcde818de7942f7e361f6ded15be9da3dae586deef22a1f",
+      "integrity": "f2ab682cd0c238e6551eff599adad62fb46717b1d366a47c526a93c74c28d7ae",
+      "effect": "f44646e20cf59d8f4261773ac01dbf03c9972af7aabf111a3a192074f08a9aa6"
+    }
+  }
+}

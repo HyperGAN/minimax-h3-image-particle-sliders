@@ -124,10 +124,14 @@ latent, trace = helper["denoise_with_gains"](
 ```
 
 CLABS takes an explicit bias, seed and `clabs` calibration fields. For
-fixed-strength replay, pass the recorded effective strengths divided by the
-same nominal strength as `step_gains`. The existing Bioluminescence cache
-contains paired velocities on the same neutral trajectory. Fitting the
-contrastive packed-latent direction requires separate matched attribute and
-neutral trajectories, followed by budget calibration with steering active
-on disjoint cases. Adaptive finished-image gain on the saved FP4 RAW8 adapter
-is unmeasured.
+fixed-strength replay, divide each recorded effective strength by the
+nominal strength to obtain its `step_gains` value. Fit the contrastive
+packed-latent direction on separate matched attribute and neutral
+trajectories, then calibrate the gate with steering active on disjoint cases.
+
+The Bioluminescence RAW64 CFP profile gained +0.00145 over its equal-dose
+constant on the two held-out 2048-pixel cases. It improved both cases and
+passed independent integrity. The separate RAW8 fixed-schedule result
+above uses its original early-heavy profile.
+[Calibrated RAW64 CFP replay](docs/BIOLUMINESCENCE-RAW64-REPLAY.md) ·
+[Per-case evidence](evidence/bioluminescence-fp4-raw64-adaptive-strength.json)
