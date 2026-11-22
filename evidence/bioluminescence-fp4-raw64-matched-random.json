@@ -1,0 +1,193 @@
+{
+  "profile": "Bioluminescence G-half RAW64 original FP4 native image",
+  "raw_sha256": "dc9c922e17a21eaac92c0124b7647ad80014776c5e3416013bf209f326a3143e",
+  "full_sha256": "dcd7329e9c37d7f47a31760be7e575b6fcc76235f48510e0a3af35b55f21a9a4",
+  "native_model": {
+    "base_math_device": "cuda",
+    "base_weight_EMA": null,
+    "diffusers_revision": "43e30028af5120d8b0868cb6975b9fad39cc4fab",
+    "fixed_Pika_adapter": false,
+    "model_config": "f8a1f3f87e708d0d4268d7c1abd040a7af9f2b7c435827f14e0a2d6fc260bcf9",
+    "native_sources": {
+      "native_adapter.py": "c137ad62703fb780b09c381d185cf8cfdac80400317d0d251be0397072aeb9b4",
+      "native_pipeline.py": "19abb6b15d744443d6dff7a083e4f3d8e042db11b04808588e2e900e2034a1fa",
+      "native_runtime.py": "ec716210158c093b8e0db00c988c16012556faf3f89070636246a18a2d54625f"
+    },
+    "pdd_config": "cbc0cf1fbb7a7f9525987db453c1bf8218b95ebc686c9c5b74cbb5bbc4852e0b",
+    "precision_profile": "MiniMax-H3-Image-original50-refiner2-bnb0502-FP4-BF16-routed128x4-r8-v1",
+    "repository": "MiniMaxAI/MiniMax-H3-Image",
+    "revision": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
+    "scheduler_config": "ce1792ea34cef021fec782abf9f45125f6bf0438f7c424e567ce28b246ad0a08",
+    "weight_index": "9617854370f06cbc5d35f01c9ec540c32479464c17de0756c2aac537926d94f9"
+  },
+  "native_release_commit": "f52682da712379cae1108691d9a583c2913c0e98",
+  "native_PDD_steps": 6,
+  "actual_sigmas": [
+    1.0,
+    0.9675236940383911,
+    0.8875485062599182,
+    0.75,
+    0.5327739119529724,
+    0.23200887441635132,
+    0.0
+  ],
+  "resolution": [
+    2048,
+    2048
+  ],
+  "original_VAE": "FP32",
+  "nominal_strength": 1.0,
+  "matched_cases": 2,
+  "measure": "Mean matched finished-image Bioluminescence ON minus OFF (SIGLIP margins)",
+  "scope": "Two original moth and elephant showcase cases, excluded from probe fit and gate calibration.",
+  "comparison": "Each random gate is paired with its own equal-dose constant and archived OFF at the same seed and prompt. The declared probability is shared across methods and the realized doses vary by method and case.",
+  "related_adaptive_evidence": {
+    "default_branch_commit": "8968d08c8eda6cec1a28576dbd8c640da9d7892e",
+    "path": "evidence/bioluminescence-fp4-raw64-adaptive-strength.json",
+    "file_sha256": "3f1a8c8c5a41a14746f0315878d5c51c5b17742306b21d84efc5fbb9633a483f"
+  },
+  "replay": {
+    "method": "random",
+    "target_firing_fraction": 0.5,
+    "realized_fired": 5,
+    "opportunities": 12,
+    "gate_seed_policy": "Use each frozen case seed in a private controller RNG separate from the native noise generator.",
+    "core_revision": "b1f780decc516808cfd3019d5e5b674457161f86",
+    "core_wheel_sha256": "dc68232a73cc606143980768f91ffd640f1c8e1cff089b9f6a65ee82b3b90a8d",
+    "calibration_sha256": "64875380bd1effac1ce0f69d06725bb43370aa3f1015031090a437adea612067",
+    "scheduling_source_sha256": "581b5e6da8de7931328f756cd255dd9acfbba978a420fd4acaac46ae6b9b8454"
+  },
+  "means": {
+    "mean_gate_ON_minus_OFF": 0.0011783459534247718,
+    "mean_constant_ON_minus_OFF": -0.00010687485337257364,
+    "mean_gate_change_vs_constant": 0.0012852208067973452
+  },
+  "cases_above_same_dose_constant": 2,
+  "cases": [
+    {
+      "case": "bioluminescence-showcase-01-moon-moth",
+      "native_seed": 9101,
+      "independent_gate_seed": 9101,
+      "random_uniform_draws": [
+        0.9660538639110325,
+        0.02018970232522521,
+        0.802181424232767,
+        0.17795346625084685,
+        0.953560748856485,
+        0.5550071051762682
+      ],
+      "fired_intervals": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "integrated_dose": 0.2972012758255005,
+      "constant_strength": 0.2972012758255005,
+      "gate_ON_minus_OFF": 0.0011209944883982341,
+      "constant_ON_minus_OFF": -0.0013198715945084891,
+      "gate_change_vs_constant": 0.002440866082906723,
+      "gate": {
+        "image_sha256": "62bd49db80f9312890b25be34051195917eaef5ea96132db332425275f02c3c5",
+        "reused_qualified_OFF": false,
+        "intensity": 0.0027590071161588034,
+        "integrity": "pass",
+        "effect_first_sha256": "14ec03fcbab39460d4fcd19bc0a59062fc1b47dfa32fd72ade6e0b49b40049dc",
+        "integrity_first_sha256": "ca04b28113f5d78b06fceede1e457f50ae30d22c767201bca4e220a1275e1d83"
+      },
+      "constant": {
+        "image_sha256": "663337378f8d2a32f9512be2fb7652c16ef8afb304dfe36e2b3cd22c2d73903e",
+        "reused_qualified_OFF": false,
+        "intensity": 0.00031814103325208026,
+        "integrity": "pass",
+        "effect_first_sha256": "d4260aad38d2134f015756a4a29ec4c0e147dbc73ec87616cdee9263751fbcf0",
+        "integrity_first_sha256": "48a012b1eec9ce62a9464ab6144e21085853ca7dbc8db84fcce44cf8be6b4ade"
+      },
+      "OFF": {
+        "image_sha256": "bef9ba5ad19ac90e71da9d45837c462afb621b15a84a87584608ba5881b08b3b",
+        "reused_qualified_OFF": true,
+        "intensity": 0.0016380126277605693,
+        "integrity": "pass",
+        "effect_first_sha256": "3c828445a87d2ec5b5b056ece49ce75049db836d266e356eaafbd7523d78abe3",
+        "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+      }
+    },
+    {
+      "case": "bioluminescence-showcase-02-forest-elephant",
+      "native_seed": 9102,
+      "independent_gate_seed": 9102,
+      "random_uniform_draws": [
+        0.9657351542795864,
+        0.17571613350579296,
+        0.5943816094840102,
+        0.0955247473173163,
+        0.6607755845263896,
+        0.2652957596230098
+      ],
+      "fired_intervals": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "integrated_dose": 0.5292101502418518,
+      "constant_strength": 0.5292101502418518,
+      "gate_ON_minus_OFF": 0.0012356974184513092,
+      "constant_ON_minus_OFF": 0.0011061218877633418,
+      "gate_change_vs_constant": 0.00012957553068796736,
+      "gate": {
+        "image_sha256": "8883a02b35337668fab9ab8df92cc266b176e03b3795cd8887ea63b28ca5534d",
+        "reused_qualified_OFF": false,
+        "intensity": -0.008977793157100677,
+        "integrity": "pass",
+        "effect_first_sha256": "ca2bd76bc003e30939b16c33c3320c58fab44293f6e732e2461d06481a0fd309",
+        "integrity_first_sha256": "77175f6bfec88c052fcbc5fa9e5215d992050a65a41e3f781bebbaf5606b7dfa"
+      },
+      "constant": {
+        "image_sha256": "756e34cae3b75d73f2676be63a6994d1772fdb466947484dfbe82dc333d81257",
+        "reused_qualified_OFF": false,
+        "intensity": -0.009107368687788645,
+        "integrity": "pass",
+        "effect_first_sha256": "fa10fe8b3bfc5f3f7dfcc7c8397e233ddc61a1fa8f94eab4c8efc6b1c6c835f5",
+        "integrity_first_sha256": "57e0acd07cd64be865fb9a0e9de5b7430ec4b7e28e1bd6019455016057543366"
+      },
+      "OFF": {
+        "image_sha256": "19ffb6e15865868b8bba2c088299672af4c1e602b8ed2ecca1e563b3389d79f1",
+        "reused_qualified_OFF": true,
+        "intensity": -0.010213490575551987,
+        "integrity": "pass",
+        "effect_first_sha256": "ed389f82b339969127953caf1ba87d9bddd838ecac16cee042b6eda6e09f9c0c",
+        "integrity_first_sha256": "453df9db1ca244aef3c3b6137f9425de1a055a3f87e1a0ee63cd78994b38b9c1"
+      }
+    }
+  ],
+  "observer_binding": {
+    "new_effect_firsts": 4,
+    "new_independent_integrity_firsts": 4,
+    "reused_archived_OFF_images": 2,
+    "effect_protocol_sha256": "73ef463898e07f086559dc30e29825d55f77f46f02bbc807de87237ca342fe60",
+    "effect_qualification_sha256": "9606571180aaae849c70028bf553b9a6dbccc19016fb4250d58bb6260e76c17f",
+    "effect_aggregate_sha256": "8424e9b3b4409edef2f53ecee1b7f15b8455bd0f7c6fc234efb55fd487b549af",
+    "integrity_qualification_sha256": "18f83d5367f013d2cb7fe84ce2deb579b53f3154635e7b059f19f7e076dc287a",
+    "integrity_aggregate_sha256": "8f349d4e8bb8af7ebbb6dd57e124e54a7ee786c1c654e168f629ad86d598451f",
+    "integrity_instrument_profile_sha256": "d8d5c66a83953566d71d28a31ee15aff9c94d5e4180db70558a518c3edc5436a",
+    "closed_guard_sha256": {
+      "integrity": "13607ce11a754e796beb4a79914e7d2d2b130ecc3e4965c7a572510cafb60b85",
+      "effect": "a04603e66bb0601aa6f552abdd38adec259fdfc880971908b33005e9dba8f1b1"
+    }
+  },
+  "evidence_sha256": {
+    "native_qualification": "1d8f373c11c03712da44f7af86f35127ffcdd6c8de3ff7a744eb2ad73a0af793",
+    "original_panel": "47a57df06c83c337d3fc5c5f546583e5cf6260dd7053f415185b85113eb0630b",
+    "independent_reproduction": "97162d472bcb3f32ee2ad7ebad9b52951188a4ce5999d8dfb4483745576cb68c"
+  },
+  "new_DiT_calls": 4,
+  "new_VAE_decodes": 4,
+  "new_optimizer_updates": 0,
+  "ema_decay": null,
+  "integrity": "pass"
+}
