@@ -133,5 +133,5 @@ The Bioluminescence RAW64 CFP profile gained +0.00145 over its equal-dose
 constant on the two held-out 2048-pixel cases. It improved both cases and
 passed independent integrity. The separate RAW8 fixed-schedule result
 above uses its original early-heavy profile.
-[Calibrated RAW64 CFP replay](docs/BIOLUMINESCENCE-RAW64-REPLAY.md) ·
+[Calibrated RAW64 CFP and CLABS replay](docs/BIOLUMINESCENCE-RAW64-REPLAY.md) ·
 [Per-case evidence](evidence/bioluminescence-fp4-raw64-adaptive-strength.json)
