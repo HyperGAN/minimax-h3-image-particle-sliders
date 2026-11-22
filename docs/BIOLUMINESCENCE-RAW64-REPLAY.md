@@ -1,4 +1,4 @@
-# Replay the calibrated Bioluminescence RAW64 CFP gate
+# Replay the calibrated Bioluminescence RAW64 gates
 
 On the two 2048-pixel Bioluminescence RAW64 cases, CFP gained +0.00250844
 over OFF and +0.00145467 over its equal-dose constant. It improved both
@@ -8,9 +8,12 @@ equal-dose constant, with one case ahead and one behind. All ten distinct
 images in the gated and dose-matched comparison passed independent integrity.
 [Per-case results and calibrated settings](../evidence/bioluminescence-fp4-raw64-adaptive-strength.json)
 
-CFP reached 12 of 24 decisions on four separate calibration cases.
-The example uses the saved 96-channel direction, measured threshold and exact
-RAW checkpoint. It runs inside the original FP4 PDD6 owner. Use the original
+CFP fired on 12 of 24 calibration intervals. CLABS fired on 13 of 24,
+within the study's one-interval tolerance of the 50% target. Both examples
+use the saved 96-channel direction and the exact RAW checkpoint. Select
+`cfp` for the measured threshold or `clabs` for the measured bias and
+feedback configuration. The replay runs inside the original FP4 PDD6
+owner. Use the original
 conditioning, noise preparation, adapter and guard from that owner. Set
 `verified_scheduling_source` to the reviewed `scheduled_native.py`, and
 `core_269_wheel` to the verified wheel from
@@ -24,8 +27,25 @@ from runpy import run_path
 
 import torch
 
+
+def measured_plan(helper, replay, case, method, core_wheel):
+    if method not in {"cfp", "clabs"}:
+        raise ValueError("Choose the measured CFP or CLABS plan")
+    settings = replay[method]
+    return helper["ImageGatePlan"](
+        core_wheel=core_wheel,
+        method=method,
+        parameter=settings["threshold" if method == "cfp" else "bias"],
+        clabs=settings.get("parameters"),
+        direction=replay["direction"],
+        calibration_sha256=replay["calibration_sha256"],
+        seed=case["seed"],
+    )
+
+
 profile = json.loads(Path("evidence/bioluminescence-fp4-raw64-adaptive-strength.json").read_text())
-case = profile["methods"]["cfp"]["cases"][0]
+method = "clabs"  # Use "cfp" to replay that measured gate.
+case = profile["methods"][method]["cases"][0]
 replay = profile["replay"]
 with Path(verified_scheduling_source).open("rb") as source:
     if file_digest(source, "sha256").hexdigest() != replay["scheduling_source_sha256"]:
@@ -51,14 +71,7 @@ if (
 ):
     raise ValueError("Use the original FP4 model and attached RAW64 tensors")
 
-gate = helper["ImageGatePlan"](
-    core_wheel=core_269_wheel,
-    method="cfp",
-    parameter=replay["cfp"]["threshold"],
-    direction=replay["direction"],
-    calibration_sha256=replay["calibration_sha256"],
-    seed=case["seed"],
-)
+gate = measured_plan(helper, replay, case, method, core_269_wheel)
 embedding = condition.embedding(case["prompt"])
 noise = prepare_noise(
     embedding, height=2048, width=2048, min_generation_area=2048**2,
@@ -70,9 +83,20 @@ with torch.no_grad():
         scale_adapter=rt.network.scaled, strength=profile["nominal_strength"],
         gate_plan=gate, check=check,
     )
+if (
+    trace["sigmas"] != profile["actual_sigmas"]
+    or trace["effective_strengths"] != case["gate"]["effective_strengths"]
+    or trace["sigma_integrated_dose"] != case["equal_integrated_dose"]
+):
+    raise RuntimeError("The trace differs from the measured Bioluminescence case")
 ```
 
 Pass the returned latent to the original FP32 VAE and retain the trace. For
 the timing comparison, use the same case and set every PDD head to the
 recorded sigma-dose-matched constant. The study separates this comparison
 from gain over matched OFF and from the categorical integrity verdicts.
+
+The CLABS gate fired at only the second PDD interval in both held-out cases.
+The shared runtime reproduced the saved probabilities and decisions on all
+24 intervals of the accepted CLABS calibration trial and all 12 held-out
+CLABS intervals. Each measured test case uses its original seed.
