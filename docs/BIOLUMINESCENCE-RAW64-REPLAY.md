@@ -8,6 +8,25 @@ equal-dose constant, with one case ahead and one behind. All ten distinct
 images in the gated and dose-matched comparison passed independent integrity.
 [Per-case results and calibrated settings](../evidence/bioluminescence-fp4-raw64-adaptive-strength.json)
 
+The archived scalar and scheduler traces verify exact integrated adapter
+strength at native FP32 scalar precision for held-out seeds 9101 and 9102.
+The original six interval widths are exactly representable in FP32 and sum
+to one. CFP fired on the first two intervals and CLABS fired on the second.
+
+| Gate | Constant applied on each interval | FP32 representation | Exact integrated dose |
+| --- | ---: | --- | ---: |
+| CFP | 0.11245149374008179 | `0x3de64cf8` | 1886623 / 16777216 |
+| CLABS | 0.0799751877784729 | `0x3da3ca08` | 1341761 / 16777216 |
+
+Each constant matches its gate's dose exactly. The adapter tensor operations
+use their original BF16 precision. The audit matched the archived
+gate and constant traces to the original FP32 VAE decode and independently
+measured image outputs for each seed. Audit SHA-256 digests are
+`35042c52dff96b00826160f0e8e2b80b384ab26972bc0c939f9d4f6f9d84d4a2`
+for CFP and
+`a5f6a08628a36628bcdc811dd96f6a14fe218e8575be7132acb897216ddf0466`
+for CLABS.
+
 CFP fired on 12 of 24 calibration intervals. CLABS fired on 13 of 24,
 within the study's one-interval tolerance of the 50% target. Both examples
 use the saved 96-channel direction and the exact RAW checkpoint. Select
